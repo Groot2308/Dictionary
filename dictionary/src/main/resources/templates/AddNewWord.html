@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Topic Listing Contact Page</title>
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+</head>
+<body>
+<main>
+  <div th:replace="Header.html :: header"></div>
+  <header style="padding-bottom: 0px;" class="site-header d-flex flex-column justify-content-center align-items-center">
+    <div class="row align-items-center">
+      <div class="col-lg-12 col-12">
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <section class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add New Word</h3>
+      </div>
+      <div class="panel-body">
+        <form th:action="@{/AddNewWord}" class="form-horizontal" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="word" class="col-sm-3 control-label">Word</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="word" id="word" placeholder="Enter new word" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phonics" class="col-sm-3 control-label">Phonics</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="phonics" id="phonics" placeholder="Enter Phonics" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="trans" class="col-sm-3 control-label">Translations</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="trans" id="trans" placeholder="Enter new translations " required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Definition</label>
+            <div class="col-sm-9">
+              <textarea required class="form-control" name="def"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exam" class="col-sm-3 control-label">Example</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="exam" id="exam" placeholder="Example" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Category</label>
+            <div class="col-sm-3">
+              <select name="category" class="form-control" required>
+                <option value="0">Choose Word Category</option>
+                <option th:each="c : ${clist}" th:value="${c.getId()}" th:text="${c.getName()}"></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Image</label>
+            <div class="col-sm-3">
+              <label class="control-label small" >(jpg/png)</label> <input type="file" name="img" required>
+            </div>
+          </div>
+          <hr>
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-primary">Add New Word</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+<div th:replace="Footer.html :: footer"></div>
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

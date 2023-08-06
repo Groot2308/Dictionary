@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Online Dictionary</title>
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/editword.css">
+</head>
+<body>
+<main>
+    <div th:replace="Header.html :: header"></div>
+    <header style="padding-bottom: 0px;" class="site-header d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-12">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div th:with="w=${word}">
+        <h1 class="your">Edit Word</h1><br>
+        <div class="ipform">
+            <form method="post" action="EditWord">
+                <div class="name">
+                    <label class="name1">Word ID</label><input class="name2" type="text" th:value="${w.getId()}" name="id" readonly>
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">Phonics</label><input class="name2" type="text" th:value="${w.getPhonics()}" name="phonics">
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">Word</label><input class="name2" type="text" th:value="${w.getWord()}" name="word">
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">Translation</label><input class="name2" type="text" th:value="${w.getTranslation()}" name="trans">
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">definition</label><input class="name2" type="text" th:value="${w.getDefinition()}" name="def">
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">example</label><input class="name2" type="text" th:value="${w.getExample()}" name="exam">
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">category</label>
+                    <select class="name2" name="category">
+                        <option th:each="c : ${clist}" th:value="${c.getId()}"
+                                th:selected="${w.getCategory().getName() == c.getName()}">
+                            ${c.getName()}
+                        </option>
+                    </select>
+                </div>
+                <br/>
+                <div class="name">
+                    <label class="name1">Image</label><input class="name2" type="file" value="${w.getImage()}" name="image">
+                </div>
+                <br/>
+                <input class="edit" type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+</main>
+<div th:replace="Footer.html :: footer"></div>
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

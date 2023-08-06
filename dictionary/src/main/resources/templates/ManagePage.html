@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Online Dictionary</title>
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{css/bootstrap-icons.css}" rel="stylesheet">
+  <link href="@{css/templatemo-topic-listing.css}" rel="stylesheet">
+</head>
+<body>
+<main>
+  <div th:replace="Header :: header"></div>
+  <header style="padding-bottom: 0px;" class="site-header d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12 col-12">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="explore-section section-padding" id="section_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="mb-4">MANAGE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="design-tab-pane">
+              <div style="justify-content: center;" class="row">
+                <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                  <div class="custom-block bg-white shadow-lg">
+                    <a th:href="@{/ManageUser}">
+                      <div class="d-flex">
+                        <div>
+                          <h5 class="mb-2">Manage User</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                  <div class="custom-block bg-white shadow-lg">
+                    <a th:href="@{/ManageWordList}">
+                      <div class="d-flex">
+                        <div>
+                          <h5 class="mb-2">Manage Word List</h5>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div th:replace="Footer :: footer"></div>
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

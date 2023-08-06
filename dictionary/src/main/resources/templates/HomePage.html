@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Online Dictionary</title>
+
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap}" rel="stylesheet">
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/css/templatemo-topic-listing.css}" rel="stylesheet">
+</head>
+
+<body id="top">
+<div th:replace="Header1.html :: header"></div>
+
+<main>
+  <section class="explore-section section-padding" id="section_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="mb-4">Topics</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="design-tab-pane">
+              <div class="row">
+                <div th:each="c : ${clist}" class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                  <div class="custom-block bg-white shadow-lg">
+                    <a th:href="@{/WordList(cid=${c.id})}">
+                      <div class="d-flex">
+                        <div>
+                          <h5 class="mb-2" th:text="${c.name}"></h5>
+                          <p class="mb-0"></p>
+                        </div>
+                      </div>
+                      <img th:src="${c.image}" class="custom-block-image img-fluid" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div th:replace="Footer.html :: footer"></div>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

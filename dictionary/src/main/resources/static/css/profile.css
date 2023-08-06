@@ -1,0 +1,117 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 28, 2023, 9:04:37 PM
+    Author     : asus
+*/
+
+.your{
+    text-align: center;
+    font-weight: 800;
+    color: #13547a;
+    letter-spacing: 7px;
+    padding-left: 53px;
+    padding-top: 31px;
+
+}
+.ipform{
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.name .name1{
+    padding: 9px 42px;
+    font-weight: 800;
+    color: black;
+}
+.name .name2{
+    border: 4px #e6e6e6;
+    border-radius: 10px;
+    padding: 9px 42px;
+    max-width: 100%;
+    outline: none;
+    appearance: none;
+   box-shadow: 0px 1px 2px 4px #13547a;
+}
+
+.phone .phone1{
+    padding: 9px 42px;
+    font-weight: 800;
+     color: black;
+}
+.phone .phone2{
+    border: 4px #e6e6e6;
+    border-radius: 10px;
+    padding: 9px 42px;
+    max-width: 100%;
+    outline: none;
+    appearance: none;
+  box-shadow: 0px 1px 2px 4px grey;
+}
+
+.email .email1{
+    padding: 9px 42px;
+    font-weight: 800;
+      color: black;
+}
+
+.email .email2{
+    border: 4px #e6e6e6;
+    border-radius: 10px;
+    padding: 9px 42px;
+    max-width: 100%;
+    outline: none;
+    appearance: none;
+   box-shadow: 0px 1px 2px 4px grey;
+}
+
+.gender .gender1{
+    padding: 9px 42px;
+    font-weight: 800;
+      color: black;
+}
+
+.gender .gender2{
+    border: 4px #e6e6e6;
+    border-radius: 10px;
+    padding: 9px 65px;
+    max-width: 100%;
+    outline: none;
+    appearance: none;
+     color: black;
+
+}
+.address .address1{
+    padding: 9px 42px;
+    font-weight: 800;
+      color: black;
+}
+
+.address .address2{
+    border: 4px #e6e6e6;
+    border-radius: 10px;
+    padding: 9px 42px;
+    max-width: 100%;
+    outline: none;
+    appearance: none;
+   box-shadow: 0px 1px 2px 4px grey;
+}
+.change{
+     color: black;
+}
+.edit{
+    background-color: #13547a;
+    color: wheat;
+    width: 10%;
+    padding: 1px;
+    border-radius: 10px;
+    border: none;
+   box-shadow: 0px 1px 2px 4px #80d0c7;
+}
+
+.edit:hover{
+    background-color:  #80d0c7;
+    color: wheat;
+}

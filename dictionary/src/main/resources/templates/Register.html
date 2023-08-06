@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Online Dictionary</title>
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/css/templatemo-topic-listing.css}" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/Register.css}">
+</head>
+<body id="top" style="background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);">
+<div th:replace="Header.html :: header"></div>
+<main>
+  <div class="signup-form">
+    <form th:action="@{/Register}" method="post" th:object="${user}">
+      <h2>Register</h2>
+      <p>Please fill in this form to create an account!</p>
+      <hr>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" th:field="*{name}"class="form-control"  required="required">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" th:field="*{email}"class="form-control"  required="required">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" th:field="*{password}" class="form-control"  required="required">
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" class="form-control" name="confirmpassword" required="required">
+      </div>
+      <div class="form-group">
+        <p style="color: red" th:text="${mess}"></p>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</main>
+<div th:replace="Footer.html :: footer"></div>
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

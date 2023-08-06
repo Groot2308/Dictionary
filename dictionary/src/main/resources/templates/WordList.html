@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Online Dictionary</title>
+
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/css/templatemo-topic-listing.css}" rel="stylesheet">
+</head>
+<body>
+<main>
+  <div th:replace="Header1 :: header"></div>
+  <section style="margin-top: 1rem;" class="ftco-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-wrap">
+            <table class="table">
+              <thead style="background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); color: white"
+                     class="thead-primary">
+              <tr>
+                <th>Word</th>
+                <th>Phonics</th>
+                <th>Translation</th>
+                <th>Add to my word list</th>
+              </tr>
+              </thead>
+              <p th:text="${mess}"></p>
+              <tbody>
+              <tr th:each="w : ${words}">
+                <td><a th:href="@{/WordDetail(wid=${w.id})}" th:text="${w.word}"></a></td>
+                <td th:text="${w.phonics}"></td>
+                <td th:text="${w.translations}"></td>
+                <td><a th:href="@{/AddMyWord(wid=${w.id}, cid=${w.category.id})}">LEARN WORD</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div th:replace="Footer :: footer"></div>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
